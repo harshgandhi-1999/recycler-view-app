@@ -32,6 +32,8 @@ public class TodoRecViewAdapter extends RecyclerView.Adapter<TodoRecViewAdapter.
     public void onBindViewHolder(@NonNull MyViewHolder holder, int position) {
         TodoModel todo = todos.get(position);
         holder.setDetails(todo);
+
+
     }
 
     @Override
@@ -63,6 +65,8 @@ public class TodoRecViewAdapter extends RecyclerView.Adapter<TodoRecViewAdapter.
             txtViewUserId.setText(String.valueOf(todo.getUserId()));
             txtViewTitle.setText(todo.getTitle());
             txtViewCompletedStatus.setText(todo.isCompleted() ? "true" : "false");
+
+            txtViewCompletedStatus.setTextColor(todo.isCompleted() ? itemView.getResources().getColor(R.color.green) : itemView.getResources().getColor(R.color.red));
         }
     }
 }
