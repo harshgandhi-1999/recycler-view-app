@@ -1,3 +1,10 @@
 <resources>
     <string name="app_name">Recycler View App</string>
+    <string name="id">Id:</string>
+    <string name="id_value">Id value</string>
+    <string name="todo_title">Todo Title</string>
+    <string name="userid">UserId:</string>
+    <string name="user_id_value">User Id Value</string>
+    <string name="completed">Completed:</string>
+    <string name="completed_status">Completed Status</string>
 </resources>
