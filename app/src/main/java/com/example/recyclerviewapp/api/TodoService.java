@@ -1,9 +1,8 @@
 package com.example.recyclerviewapp.api;
 
-import com.example.recyclerviewapp.normal_rec_view.TodoModel;
+import com.example.recyclerviewapp.models.TodoModel;
 
 import java.util.ArrayList;
-import java.util.List;
 
 import retrofit2.Call;
 import retrofit2.http.Body;

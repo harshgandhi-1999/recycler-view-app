@@ -8,16 +8,15 @@ import androidx.recyclerview.widget.RecyclerView;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
-import android.widget.ProgressBar;
 import android.widget.Toast;
 
 import com.example.recyclerviewapp.R;
 import com.example.recyclerviewapp.api.ApiClient;
 import com.example.recyclerviewapp.api.TodoService;
+import com.example.recyclerviewapp.models.TodoModel;
 import com.google.android.material.progressindicator.CircularProgressIndicator;
 
 import java.util.ArrayList;
-import java.util.List;
 
 import retrofit2.Call;
 import retrofit2.Callback;

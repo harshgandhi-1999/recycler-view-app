@@ -1,4 +1,4 @@
-package com.example.recyclerviewapp.normal_rec_view;
+package com.example.recyclerviewapp.models;
 
 public class TodoModel {
     private int userId;

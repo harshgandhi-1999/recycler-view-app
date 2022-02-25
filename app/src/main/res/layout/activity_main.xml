@@ -30,11 +30,11 @@
         app:layout_constraintTop_toBottomOf="@+id/txtAppName" />
 
     <Button
-        android:id="@+id/button2"
+        android:id="@+id/btnCardRecView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="16dp"
-        android:text="Button"
+        android:text="Card Recycler View"
         app:layout_constraintEnd_toEndOf="@+id/btnNormalRecView"
         app:layout_constraintStart_toStartOf="@+id/btnNormalRecView"
         app:layout_constraintTop_toBottomOf="@+id/btnNormalRecView" />
@@ -45,9 +45,9 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="16dp"
         android:text="Button"
-        app:layout_constraintEnd_toEndOf="@+id/button2"
-        app:layout_constraintStart_toStartOf="@+id/button2"
-        app:layout_constraintTop_toBottomOf="@+id/button2" />
+        app:layout_constraintEnd_toEndOf="@+id/btnCardRecView"
+        app:layout_constraintStart_toStartOf="@+id/btnCardRecView"
+        app:layout_constraintTop_toBottomOf="@+id/btnCardRecView" />
 
     <Button
         android:id="@+id/button4"

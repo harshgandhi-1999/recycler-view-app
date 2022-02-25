@@ -10,6 +10,7 @@ import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.recyclerviewapp.R;
+import com.example.recyclerviewapp.models.TodoModel;
 
 import java.util.ArrayList;
 
