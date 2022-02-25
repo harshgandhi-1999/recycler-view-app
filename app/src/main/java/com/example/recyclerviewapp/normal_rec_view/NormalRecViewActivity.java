@@ -28,7 +28,6 @@ public class NormalRecViewActivity extends AppCompatActivity {
 
     private RecyclerView normalRecView;
     private TodoRecViewAdapter adapter;
-    private ArrayList<TodoModel> todos;
     private TodoService todoService;
     private CircularProgressIndicator loader;
 
@@ -40,17 +39,16 @@ public class NormalRecViewActivity extends AppCompatActivity {
         normalRecView = findViewById(R.id.normalRecView);
         loader = findViewById(R.id.loader);
         adapter = new TodoRecViewAdapter(this);
-        todos = new ArrayList<>();
         todoService = ApiClient.getClient().create(TodoService.class);
 
-        loader.setVisibility(View.VISIBLE);
-        fetchTodos();
-
-        adapter.setTodos(todos);
-
+        // SET ADAPTER AND LAYOUT MANAGER
         normalRecView.setAdapter(adapter);
         normalRecView.setLayoutManager(new LinearLayoutManager(this));
         normalRecView.addItemDecoration(new DividerItemDecoration(this,LinearLayoutManager.VERTICAL));
+
+        // FETCH DATA
+        loader.setVisibility(View.VISIBLE);
+        fetchTodos();
     }
 
 
