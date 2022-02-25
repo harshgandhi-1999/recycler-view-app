@@ -7,11 +7,14 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import android.os.Bundle;
 import android.util.Log;
+import android.view.View;
+import android.widget.ProgressBar;
 import android.widget.Toast;
 
 import com.example.recyclerviewapp.R;
 import com.example.recyclerviewapp.api.ApiClient;
 import com.example.recyclerviewapp.api.TodoService;
+import com.google.android.material.progressindicator.CircularProgressIndicator;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -28,6 +31,7 @@ public class NormalRecViewActivity extends AppCompatActivity {
     private TodoRecViewAdapter adapter;
     private ArrayList<TodoModel> todos;
     private TodoService todoService;
+    private CircularProgressIndicator loader;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -35,10 +39,12 @@ public class NormalRecViewActivity extends AppCompatActivity {
         setContentView(R.layout.activity_normal_rec_view);
 
         normalRecView = findViewById(R.id.normalRecView);
+        loader = findViewById(R.id.loader);
         adapter = new TodoRecViewAdapter(this);
         todos = new ArrayList<>();
         todoService = ApiClient.getClient().create(TodoService.class);
 
+        loader.setVisibility(View.VISIBLE);
         fetchTodos();
 
         adapter.setTodos(todos);
@@ -57,12 +63,14 @@ public class NormalRecViewActivity extends AppCompatActivity {
                 Log.d(TAG, "onResponse: TODOS_FETCHED");
                 Toast.makeText(NormalRecViewActivity.this, "Todos fetched", Toast.LENGTH_SHORT).show();
                 adapter.setTodos(response.body());
+                loader.setVisibility(View.GONE);
             }
 
             @Override
             public void onFailure(Call<ArrayList<TodoModel>> call, Throwable t) {
                 Log.e(TAG, "onFailure: Failed" + t.getLocalizedMessage() );
                 Toast.makeText(NormalRecViewActivity.this, "Something went wrong, Try again!", Toast.LENGTH_SHORT).show();
+                loader.setVisibility(View.GONE);
             }
         });
     }
