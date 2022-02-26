@@ -40,11 +40,11 @@
         app:layout_constraintTop_toBottomOf="@+id/btnNormalRecView" />
 
     <Button
-        android:id="@+id/button3"
+        android:id="@+id/btnSingleSelection"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="16dp"
-        android:text="Button"
+        android:text="Recycler View with Single selection"
         app:layout_constraintEnd_toEndOf="@+id/btnCardRecView"
         app:layout_constraintStart_toStartOf="@+id/btnCardRecView"
         app:layout_constraintTop_toBottomOf="@+id/btnCardRecView" />
@@ -55,7 +55,7 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="16dp"
         android:text="Button"
-        app:layout_constraintEnd_toEndOf="@+id/button3"
-        app:layout_constraintStart_toStartOf="@+id/button3"
-        app:layout_constraintTop_toBottomOf="@+id/button3" />
+        app:layout_constraintEnd_toEndOf="@+id/btnSingleSelection"
+        app:layout_constraintStart_toStartOf="@+id/btnSingleSelection"
+        app:layout_constraintTop_toBottomOf="@+id/btnSingleSelection" />
 </androidx.constraintlayout.widget.ConstraintLayout>

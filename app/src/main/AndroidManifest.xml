@@ -12,6 +12,9 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.RecyclerViewApp">
         <activity
+            android:name=".single_selection_rec_view.SingleSelectionRecViewActivity"
+            android:exported="false" />
+        <activity
             android:name=".card_rec_view.CardRecViewActivity"
             android:exported="false" />
         <activity
