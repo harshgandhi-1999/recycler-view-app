@@ -7,4 +7,11 @@
     <string name="user_id_value">User Id Value</string>
     <string name="completed">Completed:</string>
     <string name="completed_status">Completed Status</string>
+    <string name="employee_name">Employee Name</string>
+    <string name="get_selected_item">Get Selected Item</string>
+    <string name="recycler_view_app">Recycler View App</string>
+    <string name="normal_recycler_view">Normal Recycler View</string>
+    <string name="card_recycler_view">Card Recycler View</string>
+    <string name="recycler_view_with_single_selection">Recycler View with Single selection</string>
+    <string name="tick_image">Tick Image</string>
 </resources>
