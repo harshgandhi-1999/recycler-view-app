@@ -15,4 +15,5 @@
     <string name="recycler_view_with_single_selection">Recycler View with Single selection</string>
     <string name="tick_image">Tick Image</string>
     <string name="recycler_view_with_multiple_selection">Recycler View with Multiple Selection</string>
+    <string name="get_selected_items">Get Selected Items</string>
 </resources>
