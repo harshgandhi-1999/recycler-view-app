@@ -3,6 +3,7 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/AndroidApps/RecyclerViewApp2/app/src/main/res/drawable/ic_baseline_add_24.xml" value="0.1555" />
         <entry key="..\:/AndroidApps/RecyclerViewApp2/app/src/main/res/drawable/ic_baseline_check_24.xml" value="0.1925" />
         <entry key="..\:/AndroidApps/RecyclerViewApp2/app/src/main/res/layout/activity_card_rec_view.xml" value="0.2234375" />
         <entry key="..\:/AndroidApps/RecyclerViewApp2/app/src/main/res/layout/activity_main.xml" value="0.20625" />
@@ -10,8 +11,12 @@
         <entry key="..\:/AndroidApps/RecyclerViewApp2/app/src/main/res/layout/activity_normal_rec_view.xml" value="0.4" />
         <entry key="..\:/AndroidApps/RecyclerViewApp2/app/src/main/res/layout/activity_single_selection.xml" value="0.2234375" />
         <entry key="..\:/AndroidApps/RecyclerViewApp2/app/src/main/res/layout/activity_single_selection_rec_view.xml" value="0.2" />
+        <entry key="..\:/AndroidApps/RecyclerViewApp2/app/src/main/res/layout/activity_swipeable_rec_view.xml" value="0.2234375" />
+        <entry key="..\:/AndroidApps/RecyclerViewApp2/app/src/main/res/layout/add_post_bottom_sheet_layout.xml" value="0.264" />
         <entry key="..\:/AndroidApps/RecyclerViewApp2/app/src/main/res/layout/employee_item_layout.xml" value="0.264" />
+        <entry key="..\:/AndroidApps/RecyclerViewApp2/app/src/main/res/layout/employee_item_swipe_layout.xml" value="0.2234375" />
         <entry key="..\:/AndroidApps/RecyclerViewApp2/app/src/main/res/layout/loader_layout.xml" value="0.2234375" />
+        <entry key="..\:/AndroidApps/RecyclerViewApp2/app/src/main/res/layout/post_item_layout.xml" value="0.2234375" />
         <entry key="..\:/AndroidApps/RecyclerViewApp2/app/src/main/res/layout/todo_item_card_layout.xml" value="0.1" />
         <entry key="..\:/AndroidApps/RecyclerViewApp2/app/src/main/res/layout/todo_item_layout.xml" value="0.536" />
       </map>

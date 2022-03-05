@@ -10,10 +10,11 @@ import com.example.recyclerviewapp.card_rec_view.CardRecViewActivity;
 import com.example.recyclerviewapp.multi_selection_rec_view.MultiSelectionActivity;
 import com.example.recyclerviewapp.normal_rec_view.NormalRecViewActivity;
 import com.example.recyclerviewapp.single_selection_rec_view.SingleSelectionRecViewActivity;
+import com.example.recyclerviewapp.swipeable_item_rec_view.SwipeableRecViewActivity;
 
 public class MainActivity extends AppCompatActivity {
 
-    private Button btnNormalRecView,btnCardRecView,btnSingleSelection,btnMultipleSelection;
+    private Button btnNormalRecView,btnCardRecView,btnSingleSelection,btnMultipleSelection,btnSwipeableRecView;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -24,6 +25,7 @@ public class MainActivity extends AppCompatActivity {
         btnCardRecView.setOnClickListener(view -> openCardRecView());
         btnSingleSelection.setOnClickListener(view -> openSingleSelectionRecView());
         btnMultipleSelection.setOnClickListener(view -> openMultipleSelectionRecView());
+        btnSwipeableRecView.setOnClickListener(view -> openSwipeableRecView());
     }
 
     private void initViews(){
@@ -31,6 +33,7 @@ public class MainActivity extends AppCompatActivity {
         btnCardRecView = findViewById(R.id.btnCardRecView);
         btnSingleSelection = findViewById(R.id.btnSingleSelection);
         btnMultipleSelection = findViewById(R.id.btnMultipleSelection);
+        btnSwipeableRecView = findViewById(R.id.btnSwipeableRecView);
     }
 
     private void openNormalRecView(){
@@ -52,4 +55,8 @@ public class MainActivity extends AppCompatActivity {
         startActivity(intent);
     }
 
+    private void openSwipeableRecView(){
+        Intent intent = new Intent(this, SwipeableRecViewActivity.class);
+        startActivity(intent);
+    }
 }

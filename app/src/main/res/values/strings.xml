@@ -16,4 +16,9 @@
     <string name="tick_image">Tick Image</string>
     <string name="recycler_view_with_multiple_selection">Recycler View with Multiple Selection</string>
     <string name="get_selected_items">Get Selected Items</string>
+    <string name="post_name">Post Name</string>
+    <string name="recycler_view_with_swipeable_items">Recycler View with Swipeable Items</string>
+    <string name="add_post">Add Post</string>
+    <string name="done">Done</string>
+    <string name="enter_post_name_here">Enter post name here</string>
 </resources>
