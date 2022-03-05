@@ -55,6 +55,15 @@ public class SwipeRecViewAdapter extends RecyclerView.Adapter<SwipeRecViewAdapte
         posts.remove(index);
         notifyItemRemoved(index);
     }
+    public Post getPost(int position){
+        return posts.get(position);
+    }
+
+    // add the Post at position
+    public void addPost(int position,Post post){
+        posts.add(position,post);
+        notifyItemInserted(position);
+    }
 
     public class MyViewHolder extends RecyclerView.ViewHolder {
         private TextView txtPostName;

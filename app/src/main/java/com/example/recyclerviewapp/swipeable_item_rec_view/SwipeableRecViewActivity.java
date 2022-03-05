@@ -1,13 +1,16 @@
 package com.example.recyclerviewapp.swipeable_item_rec_view;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.DividerItemDecoration;
+import androidx.recyclerview.widget.ItemTouchHelper;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import android.os.Bundle;
 import android.text.Editable;
 import android.text.TextWatcher;
+import android.view.View;
 import android.widget.Button;
 import android.widget.Toast;
 
@@ -15,6 +18,7 @@ import com.example.recyclerviewapp.R;
 import com.example.recyclerviewapp.models.Post;
 import com.google.android.material.bottomsheet.BottomSheetDialog;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
+import com.google.android.material.snackbar.Snackbar;
 import com.google.android.material.textfield.TextInputEditText;
 
 
@@ -36,6 +40,9 @@ public class SwipeableRecViewActivity extends AppCompatActivity {
         swipeableRecView.setAdapter(adapter);
         swipeableRecView.setLayoutManager(new LinearLayoutManager(this));
         swipeableRecView.addItemDecoration(new DividerItemDecoration(this,LinearLayoutManager.VERTICAL));
+
+        ItemTouchHelper itemTouchHelper = new ItemTouchHelper(simpleCallback);
+        itemTouchHelper.attachToRecyclerView(swipeableRecView);
 
         btnAddPost.setOnClickListener(view -> onAddPost());
     }
@@ -109,4 +116,35 @@ public class SwipeableRecViewActivity extends AppCompatActivity {
         editTxtPostName.setText("");
         bottomSheetDialog.dismiss();
     }
+
+    private Post deletedPost = null;
+
+    ItemTouchHelper.SimpleCallback simpleCallback = new ItemTouchHelper.SimpleCallback(0,ItemTouchHelper.LEFT | ItemTouchHelper.RIGHT) {
+        @Override
+        public boolean onMove(@NonNull RecyclerView recyclerView, @NonNull RecyclerView.ViewHolder viewHolder, @NonNull RecyclerView.ViewHolder target) {
+            return false;
+        }
+
+        @Override
+        public void onSwiped(@NonNull RecyclerView.ViewHolder viewHolder, int direction) {
+            int position = viewHolder.getAdapterPosition();
+
+            if(direction==ItemTouchHelper.LEFT || direction==ItemTouchHelper.RIGHT){
+                deleteItemFromListUtil(position);
+            }
+        }
+
+        public void deleteItemFromListUtil(int position){
+            // store delete post
+            deletedPost = adapter.getPost(position);
+            adapter.deletePost(position);
+
+            // then show snackbar for undoing the last item removed
+            Snackbar.make(swipeableRecView,"Post deleted",Snackbar.LENGTH_LONG)
+                    .setAction("Undo", view -> {
+                        adapter.addPost(position,deletedPost);
+                    })
+                    .show();
+        }
+    };
 }
