@@ -4,7 +4,6 @@ import android.content.Context;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.ImageView;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
@@ -33,7 +32,7 @@ public class SwipeRecViewAdapter extends RecyclerView.Adapter<SwipeRecViewAdapte
 
     @Override
     public void onBindViewHolder(@NonNull MyViewHolder holder, int position) {
-        holder.setPostName(posts.get(position));
+        holder.setPostTitle(posts.get(position));
     }
 
     @Override
@@ -66,14 +65,14 @@ public class SwipeRecViewAdapter extends RecyclerView.Adapter<SwipeRecViewAdapte
     }
 
     public class MyViewHolder extends RecyclerView.ViewHolder {
-        private TextView txtPostName;
+        private TextView txtPostTitle;
         public MyViewHolder(@NonNull View itemView) {
             super(itemView);
-            txtPostName = itemView.findViewById(R.id.txtPostName);
+            txtPostTitle = itemView.findViewById(R.id.txtPostTitle);
         }
 
-        public void setPostName(final Post post){
-            txtPostName.setText(post.getName());
+        public void setPostTitle(final Post post){
+            txtPostTitle.setText(post.getTitle());
         }
     }
 }

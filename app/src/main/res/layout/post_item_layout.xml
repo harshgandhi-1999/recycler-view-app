@@ -7,7 +7,7 @@
     >
 
     <TextView
-        android:id="@+id/txtPostName"
+        android:id="@+id/txtPostTitle"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/post_name"

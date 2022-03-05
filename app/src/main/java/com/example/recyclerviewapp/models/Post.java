@@ -1,17 +1,27 @@
 package com.example.recyclerviewapp.models;
 
+import androidx.annotation.NonNull;
+
 public class Post {
-    private String name;
+    private String title;
 
-    public Post(String name) {
-        this.name = name;
+    public Post(String title) {
+        this.title = title;
     }
 
-    public String getName() {
-        return name;
+    public String getTitle() {
+        return title;
     }
 
-    public void setName(String name) {
-        this.name = name;
+    public void setTitle(String title) {
+        this.title = title;
+    }
+
+    @NonNull
+    @Override
+    public String toString() {
+        return "Post{" +
+                "title='" + title + '\'' +
+                '}';
     }
 }
