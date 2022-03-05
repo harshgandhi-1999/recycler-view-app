@@ -7,19 +7,30 @@ import androidx.recyclerview.widget.ItemTouchHelper;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import android.graphics.Canvas;
 import android.os.Bundle;
 import android.text.Editable;
 import android.text.TextWatcher;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.Toast;
 
 import com.example.recyclerviewapp.R;
 import com.example.recyclerviewapp.models.Post;
+import com.example.recyclerviewapp.models.TodoModel;
+import com.example.recyclerviewapp.normal_rec_view.NormalRecViewActivity;
 import com.google.android.material.bottomsheet.BottomSheetDialog;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.google.android.material.snackbar.Snackbar;
 import com.google.android.material.textfield.TextInputEditText;
+
+import java.util.ArrayList;
+
+import it.xabaras.android.recyclerview.swipedecorator.RecyclerViewSwipeDecorator;
+import retrofit2.Call;
+import retrofit2.Callback;
+import retrofit2.Response;
 
 
 public class SwipeableRecViewActivity extends AppCompatActivity {
@@ -134,17 +145,32 @@ public class SwipeableRecViewActivity extends AppCompatActivity {
             }
         }
 
-        public void deleteItemFromListUtil(int position){
-            // store delete post
-            deletedPost = adapter.getPost(position);
-            adapter.deletePost(position);
+        @Override
+        public void onChildDraw(@NonNull Canvas c, @NonNull RecyclerView recyclerView, @NonNull RecyclerView.ViewHolder viewHolder, float dX, float dY, int actionState, boolean isCurrentlyActive) {
 
-            // then show snackbar for undoing the last item removed
-            Snackbar.make(swipeableRecView,"Post deleted",Snackbar.LENGTH_LONG)
-                    .setAction("Undo", view -> {
-                        adapter.addPost(position,deletedPost);
-                    })
-                    .show();
+            // add swipe decorator for background
+            new RecyclerViewSwipeDecorator.Builder(c, recyclerView, viewHolder, dX, dY, actionState, isCurrentlyActive)
+                    .addBackgroundColor(getResources().getColor(R.color.red))
+                    .addActionIcon(R.drawable.ic_baseline_delete_24)
+                    .addSwipeLeftLabel("DELETE")
+                    .setSwipeLeftLabelColor(getResources().getColor(R.color.white))
+                    .create()
+                    .decorate();
+
+            super.onChildDraw(c, recyclerView, viewHolder, dX, dY, actionState, isCurrentlyActive);
         }
     };
+
+    private void deleteItemFromListUtil(int position){
+        // store delete post
+        deletedPost = adapter.getPost(position);
+        adapter.deletePost(position);
+
+        // then show snackbar for undoing the last item removed
+        Snackbar.make(swipeableRecView,"Post deleted",Snackbar.LENGTH_LONG)
+                .setAction("Undo", view -> {
+                    adapter.addPost(position,deletedPost);
+                })
+                .show();
+    }
 }
