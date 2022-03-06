@@ -13,6 +13,8 @@ import android.text.Editable;
 import android.text.TextWatcher;
 import android.util.Log;
 import android.view.View;
+import android.view.animation.Animation;
+import android.view.animation.AnimationUtils;
 import android.widget.Button;
 import android.widget.Toast;
 
@@ -45,6 +47,7 @@ public class SwipeableRecViewActivity extends AppCompatActivity {
     private TextInputEditText editTxtPostTitle;
     private PostService postService;
     private CircularProgressIndicator loader;
+    private Animation fabBounce;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -87,6 +90,15 @@ public class SwipeableRecViewActivity extends AppCompatActivity {
 
         // initializing fab button
         btnAddPost = findViewById(R.id.btnAddPost);
+
+        //init animations
+        fabBounce = AnimationUtils.loadAnimation(this,R.anim.bounce_anim);
+
+        loadAnimation();
+    }
+
+    private void loadAnimation() {
+        btnAddPost.startAnimation(fabBounce);
     }
 
     private void onAddPost(){
@@ -161,8 +173,10 @@ public class SwipeableRecViewActivity extends AppCompatActivity {
             new RecyclerViewSwipeDecorator.Builder(c, recyclerView, viewHolder, dX, dY, actionState, isCurrentlyActive)
                     .addBackgroundColor(getResources().getColor(R.color.red))
                     .addActionIcon(R.drawable.ic_baseline_delete_24)
-                    .addSwipeLeftLabel("DELETE")
+                    .addSwipeLeftLabel("REMOVE")
+                    .addSwipeRightLabel("REMOVE")
                     .setSwipeLeftLabelColor(getResources().getColor(R.color.white))
+                    .setSwipeRightLabelColor(getResources().getColor(R.color.white))
                     .create()
                     .decorate();
 
