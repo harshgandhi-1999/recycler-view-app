@@ -22,4 +22,9 @@
     <string name="done">Done</string>
     <string name="enter_post_name_here">Enter post name here</string>
     <string name="recycler_view_with_multi_view_type">Recycler View with Multi View Type</string>
+    <string name="email_image">email_image</string>
+    <string name="name">Name</string>
+    <string name="address">Address</string>
+    <string name="nsw">NSW</string>
+    <string name="call_image">Call Image</string>
 </resources>
