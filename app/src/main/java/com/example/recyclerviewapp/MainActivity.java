@@ -8,13 +8,14 @@ import android.widget.Button;
 
 import com.example.recyclerviewapp.card_rec_view.CardRecViewActivity;
 import com.example.recyclerviewapp.multi_selection_rec_view.MultiSelectionActivity;
+import com.example.recyclerviewapp.multi_view_type.MultipleViewTypeActivity;
 import com.example.recyclerviewapp.normal_rec_view.NormalRecViewActivity;
 import com.example.recyclerviewapp.single_selection_rec_view.SingleSelectionRecViewActivity;
 import com.example.recyclerviewapp.swipeable_item_rec_view.SwipeableRecViewActivity;
 
 public class MainActivity extends AppCompatActivity {
 
-    private Button btnNormalRecView,btnCardRecView,btnSingleSelection,btnMultipleSelection,btnSwipeableRecView;
+    private Button btnNormalRecView,btnCardRecView,btnSingleSelection,btnMultipleSelection,btnSwipeableRecView,btnMultiViewRecView;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -26,6 +27,7 @@ public class MainActivity extends AppCompatActivity {
         btnSingleSelection.setOnClickListener(view -> openSingleSelectionRecView());
         btnMultipleSelection.setOnClickListener(view -> openMultipleSelectionRecView());
         btnSwipeableRecView.setOnClickListener(view -> openSwipeableRecView());
+        btnMultiViewRecView.setOnClickListener(view -> openMultiViewRecView());
     }
 
     private void initViews(){
@@ -34,6 +36,7 @@ public class MainActivity extends AppCompatActivity {
         btnSingleSelection = findViewById(R.id.btnSingleSelection);
         btnMultipleSelection = findViewById(R.id.btnMultipleSelection);
         btnSwipeableRecView = findViewById(R.id.btnSwipeableRecView);
+        btnMultiViewRecView = findViewById(R.id.btnMultiViewRecView);
     }
 
     private void openNormalRecView(){
@@ -57,6 +60,11 @@ public class MainActivity extends AppCompatActivity {
 
     private void openSwipeableRecView(){
         Intent intent = new Intent(this, SwipeableRecViewActivity.class);
+        startActivity(intent);
+    }
+
+    private void openMultiViewRecView(){
+        Intent intent = new Intent(this, MultipleViewTypeActivity.class);
         startActivity(intent);
     }
 }

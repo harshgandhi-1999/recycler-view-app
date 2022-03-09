@@ -12,6 +12,9 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.RecyclerViewApp">
         <activity
+            android:name=".multi_view_type.MultipleViewTypeActivity"
+            android:exported="false" />
+        <activity
             android:name=".swipeable_item_rec_view.SwipeableRecViewActivity"
             android:exported="false" />
         <activity
